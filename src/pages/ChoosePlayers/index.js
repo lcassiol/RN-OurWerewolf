@@ -13,9 +13,6 @@ export default function ChoosePlayers({ navigation }) {
     >
       <Container>
         <Title>ChoosePlayers</Title>
-        <Button onPress={() => navigation.navigate("Home")}>
-          <TextButton>Voltar</TextButton>
-        </Button>
       </Container>
     </ImageBackground>
   );

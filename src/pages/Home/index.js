@@ -8,7 +8,7 @@ export default function Home({ navigation }) {
   return (
     <ImageBackground
       source={background}
-      imageStyle={{ resizeMode: "contain" }}
+      imageStyle={{ resizeMode: "stretch" }}
       style={{ flex: 1 }}
     >
       <Container>
