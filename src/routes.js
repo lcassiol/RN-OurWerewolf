@@ -1,13 +1,14 @@
-import React from "react";
-import { TouchableOpacity } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { Ionicons } from "@expo/vector-icons";
+import React from 'react';
+import { TouchableOpacity } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { Ionicons } from '@expo/vector-icons';
 
 const AppStack = createStackNavigator();
 
-import Home from "./pages/Home";
-import ChoosePlayers from "./pages/ChoosePlayers";
+import Home from './pages/Home';
+import ChoosePlayers from './pages/ChoosePlayers';
+import AddNewPlayer from './pages/AddNewPlayer';
 
 export default function Routes() {
   return (
@@ -30,19 +31,19 @@ export default function Routes() {
           component={ChoosePlayers}
           options={{
             headerBackTitleVisible: false,
-            headerTitle: "Jogadores",
+            headerTitle: 'Jogadores',
             headerTitleStyle: {
-              color: "#fff",
+              color: '#fff',
               fontSize: 25,
-              fontWeight: "800",
-              textShadowColor: "black",
+              fontWeight: '800',
+              textShadowColor: 'black',
               textShadowOffset: { width: -1, height: 0 },
               textShadowRadius: 8,
             },
             headerRight: () => (
               <TouchableOpacity
                 style={{ marginRight: 20 }}
-                onPress={() => alert("This is a button!")}
+                onPress={() => alert('This is a button!')}
               >
                 <Ionicons name="md-people" size={32} color="white" />
               </TouchableOpacity>
@@ -52,6 +53,17 @@ export default function Routes() {
                 <Ionicons name="md-close" size={32} color="black" />
               </TouchableOpacity>
             ),
+          }}
+        />
+        <AppStack.Screen
+          name="AddNewPlayer"
+          component={AddNewPlayer}
+          options={{
+            headerBackTitleVisible: false,
+            headerTitle: '',
+            headerLeftContainerStyle: {
+              marginLeft: 15,
+            },
           }}
         />
       </AppStack.Navigator>

@@ -1,8 +1,8 @@
-import React from "react";
-import { ImageBackground } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
+import React from 'react';
+import { ImageBackground } from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 
-import background from "../../assets/backgroundwithouttext.png";
+import background from '../../assets/backgroundwithouttext.png';
 import {
   Container,
   AddPlayer,
@@ -14,86 +14,86 @@ import {
   PlayerName,
   Button,
   TextButton,
-} from "./styles";
+} from './styles';
 
-import DefaultImage from "../../assets/unknown_profile.png";
+import DefaultImage from '../../assets/unknown_profile.png';
 
 export default function ChoosePlayers({ navigation }) {
   const data = [
     {
       id: 1,
-      name: "Jubileu",
+      name: 'Jubileu',
     },
     {
       id: 2,
-      name: "Javax",
+      name: 'Javax',
     },
     {
       id: 3,
-      name: "Normax",
+      name: 'Normax',
     },
     {
       id: 4,
-      name: "Cassio",
+      name: 'Cassio',
     },
     {
       id: 5,
-      name: "OPa",
+      name: 'OPa',
     },
     {
       id: 6,
-      name: "Joel",
+      name: 'Joel',
     },
     {
       id: 7,
-      name: "Epa epa",
+      name: 'Epa epa',
     },
     {
       id: 8,
-      name: "Uol",
+      name: 'Uol',
     },
     {
       id: 9,
-      name: "ashu",
+      name: 'ashu',
     },
     {
       id: 10,
-      name: "Xxz",
+      name: 'Xxz',
     },
     {
       id: 11,
-      name: "weaw",
+      name: 'weaw',
     },
     {
       id: 12,
-      name: "sklwo",
+      name: 'sklwo',
     },
     {
       id: 13,
-      name: "Uol",
+      name: 'Uol',
     },
     {
       id: 14,
-      name: "Uol",
+      name: 'Uol',
     },
     {
       id: 15,
-      name: "EUyt",
+      name: 'EUyt',
     },
     {
       id: 16,
-      name: "0oi0",
+      name: '0oi0',
     },
   ];
 
   return (
     <ImageBackground
       source={background}
-      imageStyle={{ resizeMode: "stretch" }}
+      imageStyle={{ resizeMode: 'stretch' }}
       style={{ flex: 1 }}
     >
       <Container>
-        <AddPlayer>
+        <AddPlayer onPress={() => navigation.navigate('AddNewPlayer')}>
           <Title>Adicione novos jogadores</Title>
           <AntDesign name="pluscircleo" size={27} color="white" />
         </AddPlayer>
@@ -104,7 +104,7 @@ export default function ChoosePlayers({ navigation }) {
             keyExtractor={(item) => item.id}
             numColumns={3}
             columnWrapperStyle={{
-              justifyContent: "flex-start",
+              justifyContent: 'flex-start',
             }}
             renderItem={({ item }) => {
               return (
