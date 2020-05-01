@@ -1,7 +1,8 @@
 import React from "react";
-import { Button } from "react-native";
+import { TouchableOpacity } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { Ionicons } from "@expo/vector-icons";
 
 const AppStack = createStackNavigator();
 
@@ -39,11 +40,17 @@ export default function Routes() {
               textShadowRadius: 8,
             },
             headerRight: () => (
-              <Button
+              <TouchableOpacity
+                style={{ marginRight: 20 }}
                 onPress={() => alert("This is a button!")}
-                title="biblioteca"
-                color="#00cc00"
-              />
+              >
+                <Ionicons name="md-people" size={32} color="white" />
+              </TouchableOpacity>
+            ),
+            headerBackImage: () => (
+              <TouchableOpacity style={{ marginLeft: 15 }}>
+                <Ionicons name="md-close" size={32} color="black" />
+              </TouchableOpacity>
             ),
           }}
         />

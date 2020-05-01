@@ -1,5 +1,6 @@
 import React from "react";
-import { ImageBackground, FlatList } from "react-native";
+import { ImageBackground } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
 
 import background from "../../assets/backgroundwithouttext.png";
 import {
@@ -93,7 +94,8 @@ export default function ChoosePlayers({ navigation }) {
     >
       <Container>
         <AddPlayer>
-          <Title>Adicione players +</Title>
+          <Title>Adicione novos jogadores</Title>
+          <AntDesign name="pluscircleo" size={27} color="white" />
         </AddPlayer>
         <Content>
           <PlayersList

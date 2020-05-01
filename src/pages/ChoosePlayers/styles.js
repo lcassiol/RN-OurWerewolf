@@ -10,13 +10,15 @@ export const AddPlayer = styled.TouchableOpacity`
   background: #174c66;
   height: 60px;
   justify-content: center;
+  align-items: center;
+  flex-direction: row;
 `;
 
 export const Title = styled.Text`
   font-size: 20px;
   color: #fff;
-  align-self: flex-start;
-  margin-left: 50px;
+
+  margin-right: 15px;
 `;
 
 export const Content = styled.View`
