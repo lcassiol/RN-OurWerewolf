@@ -17,7 +17,7 @@ export const ButtonCamera = styled.TouchableOpacity`
 `;
 
 export const PlayerImage = styled.Image`
-  margin-top: 80px;
+  margin-top: -20px;
   width: 250px;
   height: 250px;
 `;
