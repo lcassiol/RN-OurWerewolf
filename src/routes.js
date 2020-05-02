@@ -9,6 +9,7 @@ const AppStack = createStackNavigator();
 import Home from './pages/Home';
 import ChoosePlayers from './pages/ChoosePlayers';
 import AddNewPlayer from './pages/AddNewPlayer';
+import PlayerLibrary from './pages/PlayerLibrary';
 
 export default function Routes() {
   return (
@@ -40,10 +41,10 @@ export default function Routes() {
               textShadowOffset: { width: -1, height: 0 },
               textShadowRadius: 8,
             },
-            headerRight: () => (
+            headerRight: (navigation) => (
               <TouchableOpacity
                 style={{ marginRight: 20 }}
-                onPress={() => alert('This is a button!')}
+                onPress={() => navigation.navigate('PlayerLibrary')}
               >
                 <Ionicons name="md-people" size={32} color="white" />
               </TouchableOpacity>
@@ -63,6 +64,25 @@ export default function Routes() {
             headerTitle: '',
             headerLeftContainerStyle: {
               marginLeft: 15,
+            },
+          }}
+        />
+        <AppStack.Screen
+          name="PlayerLibrary"
+          component={PlayerLibrary}
+          options={{
+            headerBackTitleVisible: false,
+            headerTitle: 'Biblioteca de jogadores',
+            headerLeftContainerStyle: {
+              marginLeft: 15,
+            },
+            headerTitleStyle: {
+              color: '#fff',
+              fontSize: 20,
+              fontWeight: '800',
+              textShadowColor: 'black',
+              textShadowOffset: { width: -1, height: 0 },
+              textShadowRadius: 8,
             },
           }}
         />

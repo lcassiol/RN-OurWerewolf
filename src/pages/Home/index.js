@@ -1,22 +1,22 @@
-import React from "react";
-import { ImageBackground } from "react-native";
+import React from 'react';
+import { ImageBackground } from 'react-native';
 
-import background from "../../assets/background.png";
-import { Container, Content, Button, TextButton } from "./styles";
+import background from '../../assets/background.png';
+import { Container, Content, Button, TextButton } from './styles';
 
 export default function Home({ navigation }) {
   return (
     <ImageBackground
       source={background}
-      imageStyle={{ resizeMode: "stretch" }}
+      imageStyle={{ resizeMode: 'stretch' }}
       style={{ flex: 1 }}
     >
       <Container>
         <Content>
-          <Button onPress={() => navigation.navigate("ChoosePlayers")}>
+          <Button onPress={() => navigation.navigate('ChoosePlayers')}>
             <TextButton>Novo Jogo</TextButton>
           </Button>
-          <Button>
+          <Button onPress={() => navigation.navigate('PlayerLibrary')}>
             <TextButton>Biblioteca de jogadores</TextButton>
           </Button>
           <Button>

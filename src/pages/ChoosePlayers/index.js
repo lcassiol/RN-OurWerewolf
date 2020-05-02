@@ -32,58 +32,6 @@ export default function ChoosePlayers({ navigation }) {
       id: 3,
       name: 'Normax',
     },
-    {
-      id: 4,
-      name: 'Cassio',
-    },
-    {
-      id: 5,
-      name: 'OPa',
-    },
-    {
-      id: 6,
-      name: 'Joel',
-    },
-    {
-      id: 7,
-      name: 'Epa epa',
-    },
-    {
-      id: 8,
-      name: 'Uol',
-    },
-    {
-      id: 9,
-      name: 'ashu',
-    },
-    {
-      id: 10,
-      name: 'Xxz',
-    },
-    {
-      id: 11,
-      name: 'weaw',
-    },
-    {
-      id: 12,
-      name: 'sklwo',
-    },
-    {
-      id: 13,
-      name: 'Uol',
-    },
-    {
-      id: 14,
-      name: 'Uol',
-    },
-    {
-      id: 15,
-      name: 'EUyt',
-    },
-    {
-      id: 16,
-      name: '0oi0',
-    },
   ];
 
   return (
