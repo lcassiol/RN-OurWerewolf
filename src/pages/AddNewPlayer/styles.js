@@ -47,7 +47,7 @@ export const ButtonSave = styled.TouchableOpacity`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 15px;
+  padding: 12px;
 `;
 
 export const ButtonText = styled.Text`
