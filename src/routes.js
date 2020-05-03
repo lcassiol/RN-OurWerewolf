@@ -30,7 +30,7 @@ export default function Routes() {
         <AppStack.Screen
           name="ChoosePlayers"
           component={ChoosePlayers}
-          options={{
+          options={({ navigation }) => ({
             headerBackTitleVisible: false,
             headerTitle: 'Jogadores',
             headerTitleStyle: {
@@ -41,7 +41,12 @@ export default function Routes() {
               textShadowOffset: { width: -1, height: 0 },
               textShadowRadius: 8,
             },
-            headerRight: (navigation) => (
+            headerBackImage: () => (
+              <TouchableOpacity style={{ marginLeft: 15 }}>
+                <Ionicons name="md-close" size={32} color="black" />
+              </TouchableOpacity>
+            ),
+            headerRight: () => (
               <TouchableOpacity
                 style={{ marginRight: 20 }}
                 onPress={() => navigation.navigate('PlayerLibrary')}
@@ -49,12 +54,7 @@ export default function Routes() {
                 <Ionicons name="md-people" size={32} color="white" />
               </TouchableOpacity>
             ),
-            headerBackImage: () => (
-              <TouchableOpacity style={{ marginLeft: 15 }}>
-                <Ionicons name="md-close" size={32} color="black" />
-              </TouchableOpacity>
-            ),
-          }}
+          })}
         />
         <AppStack.Screen
           name="AddNewPlayer"
