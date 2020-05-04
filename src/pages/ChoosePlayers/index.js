@@ -66,7 +66,7 @@ export default function ChoosePlayers({ navigation }) {
             }}
           />
         </Content>
-        <Button>
+        <Button onPress={() => navigation.navigate('ChoosePapers')}>
           <TextButton>PRÓXIMO</TextButton>
         </Button>
       </Container>

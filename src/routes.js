@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import ChoosePlayers from './pages/ChoosePlayers';
 import AddNewPlayer from './pages/AddNewPlayer';
 import PlayerLibrary from './pages/PlayerLibrary';
+import ChoosePapers from './pages/ChoosePapers';
 
 export default function Routes() {
   return (
@@ -87,6 +88,25 @@ export default function Routes() {
               textShadowRadius: 8,
             },
           }}
+        />
+        <AppStack.Screen
+          name="ChoosePapers"
+          component={ChoosePapers}
+          options={({ navigation }) => ({
+            headerBackTitleVisible: false,
+            headerTitle: 'Papeis',
+            headerTitleStyle: {
+              color: '#fff',
+              fontSize: 25,
+              fontWeight: '800',
+              textShadowColor: 'black',
+              textShadowOffset: { width: -1, height: 0 },
+              textShadowRadius: 8,
+            },
+            headerLeftContainerStyle: {
+              marginLeft: 15,
+            },
+          })}
         />
       </AppStack.Navigator>
     </NavigationContainer>
