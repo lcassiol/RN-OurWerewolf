@@ -41,7 +41,9 @@ export default function ChoosePlayers({ navigation }) {
       style={{ flex: 1 }}
     >
       <Container>
-        <AddPlayer onPress={() => navigation.navigate('AddNewPlayer')}>
+        <AddPlayer
+          onPress={() => navigation.navigate('AddNewPlayer', { canAdd: true })}
+        >
           <Title>Adicione novos jogadores</Title>
           <AntDesign name="pluscircleo" size={27} color="white" />
         </AddPlayer>

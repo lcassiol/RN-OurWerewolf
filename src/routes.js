@@ -49,7 +49,9 @@ export default function Routes() {
             headerRight: () => (
               <TouchableOpacity
                 style={{ marginRight: 20 }}
-                onPress={() => navigation.navigate('PlayerLibrary')}
+                onPress={() =>
+                  navigation.navigate('PlayerLibrary', { canAdd: false })
+                }
               >
                 <Ionicons name="md-people" size={32} color="white" />
               </TouchableOpacity>

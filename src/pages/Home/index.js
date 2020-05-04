@@ -16,7 +16,11 @@ export default function Home({ navigation }) {
           <Button onPress={() => navigation.navigate('ChoosePlayers')}>
             <TextButton>Novo Jogo</TextButton>
           </Button>
-          <Button onPress={() => navigation.navigate('PlayerLibrary')}>
+          <Button
+            onPress={() =>
+              navigation.navigate('PlayerLibrary', { canAdd: true })
+            }
+          >
             <TextButton>Biblioteca de jogadores</TextButton>
           </Button>
           <Button>

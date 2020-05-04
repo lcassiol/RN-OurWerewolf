@@ -16,8 +16,9 @@ import {
 
 import DefaultImage from '../../assets/unknown_profile.png';
 
-export default function PlayerLibrary() {
-  const canAddNew = true;
+export default function PlayerLibrary({ route }) {
+  const { canAdd } = route.params;
+
   const data = [
     {
       id: 1,
@@ -119,7 +120,7 @@ export default function PlayerLibrary() {
             }}
           />
           <Button>
-            {canAddNew ? (
+            {canAdd ? (
               <AntDesign name="plus" size={30} color="white" />
             ) : (
               <MaterialIcons name="done" size={35} color="white" />
