@@ -49,3 +49,17 @@ export const PaperName = styled.Text`
   font-weight: bold;
   margin-top: 8px;
 `;
+
+export const NextButton = styled.TouchableOpacity`
+  background: #174c66;
+  align-items: center;
+  justify-content: center;
+  height: 65px;
+`;
+
+export const TextButton = styled.Text`
+  font-weight: bold;
+  font-size: 16px;
+  color: #fff;
+  text-transform: uppercase;
+`;
