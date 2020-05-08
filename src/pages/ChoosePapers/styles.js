@@ -28,26 +28,22 @@ export const Content = styled.View`
 
 export const Papers = styled.FlatList``;
 
-export const Paper = styled.View`
-  align-items: center;
-  border-width: 1px;
-  border-color: #999;
-
-  width: 155px;
-  height: 200px;
-  margin: 10px;
+export const Line = styled.View`
+  width: 150px;
+  align-self: center;
+  border-top-color: #174c66;
+  border-top-width: 1.6px;
+  margin-top: 10px;
+  margin-bottom: 5px;
 `;
 
-export const PaperImage = styled.Image`
-  margin-top: 8px;
-  width: 100px;
-  height: 100px;
-`;
-
-export const PaperName = styled.Text`
-  font-size: 18px;
+export const Category = styled.Text`
   font-weight: bold;
-  margin-top: 8px;
+  font-size: 16px;
+  color: #174c66;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px 0;
 `;
 
 export const NextButton = styled.TouchableOpacity`
