@@ -11,6 +11,7 @@ import ChoosePlayers from './pages/ChoosePlayers';
 import AddNewPlayer from './pages/AddNewPlayer';
 import PlayerLibrary from './pages/PlayerLibrary';
 import ChoosePapers from './pages/ChoosePapers';
+import GameDetails from './pages/GameDetails';
 
 export default function Routes() {
   return (
@@ -95,6 +96,25 @@ export default function Routes() {
           options={({ navigation }) => ({
             headerBackTitleVisible: false,
             headerTitle: 'Papeis',
+            headerTitleStyle: {
+              color: '#fff',
+              fontSize: 25,
+              fontWeight: '800',
+              textShadowColor: 'black',
+              textShadowOffset: { width: -1, height: 0 },
+              textShadowRadius: 8,
+            },
+            headerLeftContainerStyle: {
+              marginLeft: 15,
+            },
+          })}
+        />
+        <AppStack.Screen
+          name="GameDetails"
+          component={GameDetails}
+          options={({ navigation }) => ({
+            headerBackTitleVisible: false,
+            headerTitle: 'Jogabilidade',
             headerTitleStyle: {
               color: '#fff',
               fontSize: 25,

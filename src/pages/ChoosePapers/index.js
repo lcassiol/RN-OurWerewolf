@@ -16,7 +16,7 @@ import {
 import Paper from '../../components/Paper';
 import background from '../../assets/backgroundwithouttext.png';
 
-const ChoosePapers = () => {
+const ChoosePapers = ({ navigation }) => {
   const [randomPapers, setRandomPapers] = useState(true);
   const toggleSwitch = () => setRandomPapers((previousState) => !previousState);
 
@@ -83,7 +83,7 @@ const ChoosePapers = () => {
                 justifyContent: 'flex-start',
               }}
               renderItem={({ item }) => {
-                return <Paper paper={item} />;
+                return <Paper paper={item} randomPapers={randomPapers} />;
               }}
             />
 
@@ -98,7 +98,7 @@ const ChoosePapers = () => {
                 justifyContent: 'flex-start',
               }}
               renderItem={({ item }) => {
-                return <Paper paper={item} />;
+                return <Paper paper={item} randomPapers={randomPapers} />;
               }}
             />
 
@@ -113,7 +113,7 @@ const ChoosePapers = () => {
                 justifyContent: 'flex-start',
               }}
               renderItem={({ item }) => {
-                return <Paper paper={item} />;
+                return <Paper paper={item} randomPapers={randomPapers} />;
               }}
             />
 
@@ -128,12 +128,12 @@ const ChoosePapers = () => {
                 justifyContent: 'flex-start',
               }}
               renderItem={({ item }) => {
-                return <Paper paper={item} />;
+                return <Paper paper={item} randomPapers={randomPapers} />;
               }}
             />
           </Content>
         </ScrollView>
-        <NextButton onPress={() => navigation.navigate('ChoosePapers')}>
+        <NextButton onPress={() => navigation.navigate('GameDetails')}>
           <TextButton>PRÓXIMO</TextButton>
         </NextButton>
       </Container>
