@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { View, ImageBackground, Switch, ScrollView } from 'react-native';
+import {
+  View,
+  ImageBackground,
+  Switch,
+  ScrollView,
+  Picker,
+} from 'react-native';
 
 import {
   Container,
@@ -17,6 +23,8 @@ import background from '../../assets/backgroundwithouttext.png';
 
 const GameDetails = () => {
   const [defaultConfig, setDefaultConfig] = useState(true);
+  const [gameMode, setGameMode] = useState('narrador');
+
   const toggleSwitch = () =>
     setDefaultConfig((previousState) => !previousState);
 
@@ -41,6 +49,18 @@ const GameDetails = () => {
           </Random>
           <Content>
             <Category>Modo de jogo</Category>
+            <Picker
+              style={{ marginTop: -40, marginBottom: -30 }}
+              selectedValue={gameMode}
+              onValueChange={(mode) => setGameMode(mode)}
+            >
+              <Picker.Item label="Narrador" value="narrador" />
+              <Picker.Item
+                label="Mostrar apenas os papéis"
+                value="justPapers"
+              />
+            </Picker>
+
             <Description>
               O aplicativo gerencia o jogo mostrando a cada jogador seus papéis,
               permitindo que eles performem ações durante a noite e contando os
