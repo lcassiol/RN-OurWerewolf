@@ -1,6 +1,11 @@
 import React from 'react';
 import { ImageBackground } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
+import { YellowBox } from 'react-native';
+
+YellowBox.ignoreWarnings([
+  'VirtualizedLists should never be nested', // TODO: Remove when fixed
+]);
 
 import background from '../../assets/backgroundwithouttext.png';
 import {

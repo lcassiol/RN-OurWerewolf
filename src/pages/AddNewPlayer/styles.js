@@ -36,7 +36,7 @@ export const PlayerName = styled.TextInput.attrs({
   shadow-color: #000;
   shadow-offset: 0 5px;
   shadow-opacity: 0.34;
-  shadow-radius: 6.27;
+  shadow-radius: 6.27px;
   elevation: 10;
 `;
 
