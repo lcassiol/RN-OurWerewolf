@@ -23,10 +23,13 @@ import background from '../../assets/backgroundwithouttext.png';
 
 const GameDetails = () => {
   const [defaultConfig, setDefaultConfig] = useState(true);
+  const [revealName, setRevealName] = useState(true);
+  const [discussionTimer, setDiscussionTimer] = useState(true);
+  const [killFirstRound, setKillFirstRound] = useState(true);
+  const [nightActions, setNightActions] = useState(true);
+  const [playerResignVote, setPlayerResignVote] = useState(true);
+  const [secretVote, setSecretVote] = useState(true);
   const [gameMode, setGameMode] = useState('narrador');
-
-  const toggleSwitch = () =>
-    setDefaultConfig((previousState) => !previousState);
 
   return (
     <ImageBackground
@@ -43,7 +46,9 @@ const GameDetails = () => {
               thumbColor={defaultConfig ? '#81b0ff' : '#81b0ff'}
               ios_backgroundColor="#666"
               style={{ transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }] }}
-              onValueChange={toggleSwitch}
+              onValueChange={() =>
+                setDefaultConfig((previousState) => !previousState)
+              }
               value={defaultConfig}
             />
           </Random>
@@ -74,11 +79,13 @@ const GameDetails = () => {
               <Option>Revelar o nome do jogador quando ele morrer</Option>
               <Switch
                 trackColor={{ false: '#767577', true: '#f4f3f4' }}
-                thumbColor={defaultConfig ? '#81b0ff' : '#81b0ff'}
+                thumbColor={revealName ? '#81b0ff' : '#81b0ff'}
                 ios_backgroundColor="#666"
                 style={{ transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }] }}
-                onValueChange={toggleSwitch}
-                value={defaultConfig}
+                onValueChange={() =>
+                  setRevealName((previousState) => !previousState)
+                }
+                value={revealName}
               />
             </View>
 
@@ -88,11 +95,13 @@ const GameDetails = () => {
               <Option>Desabilitar temporizador de discussão</Option>
               <Switch
                 trackColor={{ false: '#767577', true: '#f4f3f4' }}
-                thumbColor={defaultConfig ? '#81b0ff' : '#81b0ff'}
+                thumbColor={discussionTimer ? '#81b0ff' : '#81b0ff'}
                 ios_backgroundColor="#666"
                 style={{ transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }] }}
-                onValueChange={toggleSwitch}
-                value={defaultConfig}
+                onValueChange={() =>
+                  setDiscussionTimer((previousState) => !previousState)
+                }
+                value={discussionTimer}
               />
             </View>
 
@@ -102,11 +111,13 @@ const GameDetails = () => {
               <Option>Não matar na primeira rodada</Option>
               <Switch
                 trackColor={{ false: '#767577', true: '#f4f3f4' }}
-                thumbColor={defaultConfig ? '#81b0ff' : '#81b0ff'}
+                thumbColor={killFirstRound ? '#81b0ff' : '#81b0ff'}
                 ios_backgroundColor="#666"
                 style={{ transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }] }}
-                onValueChange={toggleSwitch}
-                value={defaultConfig}
+                onValueChange={() =>
+                  setKillFirstRound((previousState) => !previousState)
+                }
+                value={killFirstRound}
               />
             </View>
 
@@ -116,11 +127,13 @@ const GameDetails = () => {
               <Option>Ações noturnas dos aldeões</Option>
               <Switch
                 trackColor={{ false: '#767577', true: '#f4f3f4' }}
-                thumbColor={defaultConfig ? '#81b0ff' : '#81b0ff'}
+                thumbColor={nightActions ? '#81b0ff' : '#81b0ff'}
                 ios_backgroundColor="#666"
                 style={{ transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }] }}
-                onValueChange={toggleSwitch}
-                value={defaultConfig}
+                onValueChange={() =>
+                  setNightActions((previousState) => !previousState)
+                }
+                value={nightActions}
               />
             </View>
 
@@ -132,11 +145,13 @@ const GameDetails = () => {
               <Option>Jogadores podem pular seus votos</Option>
               <Switch
                 trackColor={{ false: '#767577', true: '#f4f3f4' }}
-                thumbColor={defaultConfig ? '#81b0ff' : '#81b0ff'}
+                thumbColor={playerResignVote ? '#81b0ff' : '#81b0ff'}
                 ios_backgroundColor="#666"
                 style={{ transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }] }}
-                onValueChange={toggleSwitch}
-                value={defaultConfig}
+                onValueChange={() =>
+                  setPlayerResignVote((previousState) => !previousState)
+                }
+                value={playerResignVote}
               />
             </View>
 
@@ -146,11 +161,13 @@ const GameDetails = () => {
               <Option>Voto secreto</Option>
               <Switch
                 trackColor={{ false: '#767577', true: '#f4f3f4' }}
-                thumbColor={defaultConfig ? '#81b0ff' : '#81b0ff'}
+                thumbColor={secretVote ? '#81b0ff' : '#81b0ff'}
                 ios_backgroundColor="#666"
                 style={{ transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }] }}
-                onValueChange={toggleSwitch}
-                value={defaultConfig}
+                onValueChange={() =>
+                  setSecretVote((previousState) => !previousState)
+                }
+                value={secretVote}
               />
             </View>
           </Content>

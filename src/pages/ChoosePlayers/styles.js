@@ -1,12 +1,13 @@
 import styled from 'styled-components/native';
 import { FlatList } from 'react-native';
+import { RectButton } from 'react-native-gesture-handler';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
   margin-top: 100px;
 `;
 
-export const AddPlayer = styled.TouchableOpacity`
+export const AddPlayer = styled(RectButton)`
   background: #174c66;
   height: 60px;
   justify-content: center;
@@ -43,7 +44,7 @@ export const PlayerName = styled.Text`
   font-weight: bold;
 `;
 
-export const Button = styled.TouchableOpacity`
+export const Button = styled(RectButton)`
   background: #174c66;
   border-radius: 5px;
   align-items: center;

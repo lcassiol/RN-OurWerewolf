@@ -1,4 +1,5 @@
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
+import { RectButton } from 'react-native-gesture-handler';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
@@ -17,7 +18,7 @@ export const BackgroundImage = styled.Image.attrs()`
   height: 900px;
 `;
 
-export const Button = styled.TouchableOpacity`
+export const Button = styled(RectButton)`
   background: #174c66;
   padding: 15px;
   margin-bottom: 35px;

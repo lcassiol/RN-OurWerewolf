@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { RectButton } from 'react-native-gesture-handler';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
@@ -49,7 +50,7 @@ export const Option = styled.Text`
   padding: 10px 0;
 `;
 
-export const NextButton = styled.TouchableOpacity`
+export const NextButton = styled(RectButton)`
   background: #174c66;
   align-items: center;
   justify-content: center;
