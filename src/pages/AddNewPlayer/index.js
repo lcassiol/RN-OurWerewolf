@@ -19,6 +19,7 @@ import {
 
 export default function AddNewPlayer() {
   const camera = React.createRef();
+  const [photo, setPhoto] = useState(DefaultImage);
   const [showCamera, setShowCamera] = useState(false);
   const [hasPermission, setHasPermission] = useState(null);
   const [type, setType] = useState(Camera.Constants.Type.front);
@@ -31,9 +32,12 @@ export default function AddNewPlayer() {
   }, []);
 
   async function takePicture() {
-    if (this.camera) {
-      let photo = await camera.takePictureAsync();
+    console.log('tira foto!');
+    if (camera) {
+      let photo = await camera.current.takePictureAsync();
       console.log(photo);
+      setShowCamera(false);
+      setPhoto({ uri: photo.uri });
     }
   }
 
@@ -51,36 +55,65 @@ export default function AddNewPlayer() {
         >
           <View style={{ padding: 24, flex: 1, justifyContent: 'center' }}>
             {showCamera ? (
-              <Camera
-                style={{ width: 250, height: 300, marginTop: -20 }}
-                ref={camera}
-                type={type}
-              />
+              <>
+                <ButtonCamera
+                  onPress={() => {
+                    setType(
+                      type === Camera.Constants.Type.back
+                        ? Camera.Constants.Type.front
+                        : Camera.Constants.Type.back
+                    );
+                  }}
+                >
+                  <Camera
+                    style={{
+                      width: 250,
+                      height: 300,
+                      marginTop: -80,
+                    }}
+                    ref={camera}
+                    type={type}
+                  >
+                    <MaterialIcons
+                      style={{
+                        marginTop: -20,
+                        position: 'absolute',
+                        bottom: 0,
+                        left: 0,
+                      }}
+                      name="cached"
+                      size={45}
+                      color="#999"
+                    />
+                  </Camera>
+                </ButtonCamera>
+                <ButtonCamera onPress={takePicture}>
+                  <MaterialIcons
+                    style={{ marginTop: -15 }}
+                    name="photo-camera"
+                    size={45}
+                    color="#174c66"
+                  />
+                </ButtonCamera>
+              </>
             ) : (
-              <ButtonCamera
-                onPress={() => {
-                  setType(
-                    type === Camera.Constants.Type.back
-                      ? Camera.Constants.Type.front
-                      : Camera.Constants.Type.back
-                  );
-                }}
-              >
-                <PlayerImage source={DefaultImage} />
-              </ButtonCamera>
+              <>
+                <ButtonCamera onPress={() => setShowCamera(true)}>
+                  <PlayerImage style={{ borderRadius: 200 }} source={photo} />
+                  {hasPermission === false && (
+                    <Text>Acesso a camera rejeitado</Text>
+                  )}
+                </ButtonCamera>
+                <ButtonCamera onPress={() => setShowCamera(true)}>
+                  <MaterialIcons
+                    style={{ marginTop: -30 }}
+                    name="photo-camera"
+                    size={45}
+                    color="#174c66"
+                  />
+                </ButtonCamera>
+              </>
             )}
-
-            <ButtonCamera onPress={takePicture}>
-              <MaterialIcons
-                style={{ marginTop: -20 }}
-                name="photo-camera"
-                size={45}
-                color="#000"
-              />
-              {hasPermission === false && (
-                <Text>Acesso a camera rejeitado</Text>
-              )}
-            </ButtonCamera>
 
             <PlayerName placeholder="Nome do jogador(a)" />
             <ButtonSave>
